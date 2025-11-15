@@ -1,0 +1,206 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automata - AI-Powered Task Automation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-brand">
+                <div class="brand-icon"></div>
+                <span class="brand-text">Automata</span>
+            </div>
+            <button class="hamburger" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#blog">Blog</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <div class="hero-decoration"></div>
+                <h1>AI-powered task automation for internal teams</h1>
+                <p class="hero-subheading">Streamline code-driven workflows with automated email campaigns and scheduled tasks. Built for efficiency, designed for simplicity.</p>
+                <p class="hero-microcopy">Private internal use only</p>
+            </div>
+        </section>
+
+        <section class="stats">
+            <div class="stats-grid">
+                <div class="stat-card card-accent-1">
+                    <div class="stat-decoration"></div>
+                    <h3>Reliability</h3>
+                    <div class="stat-number">99.9%</div>
+                    <p>Target uptime for scheduled automations.</p>
+                </div>
+                <div class="stat-card card-accent-2">
+                    <div class="stat-decoration-circle"></div>
+                    <h3>Time saved</h3>
+                    <div class="stat-number">+80%</div>
+                    <p>Less manual scripting for recurring tasks.</p>
+                </div>
+                <div class="stat-card card-accent-3">
+                    <div class="stat-icon"></div>
+                    <h3>Private by design</h3>
+                    <p>Built for internal workflows, not public users.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="products" class="products">
+            <div class="products-header">
+                <h2>Products</h2>
+                <p class="section-subheading">Internal tools for automated coded tasks.</p>
+            </div>
+
+            <div class="product-main">
+                <div class="product-card">
+                    <h3>Python Email Automation</h3>
+                    <p class="product-description">Define Python code and configuration for mailing lists, schedule, and email parameters. Prepare payloads to run automated email campaigns.</p>
+                    
+                    <div class="product-interface">
+                        <div class="config-column">
+                            <h4>Configuration</h4>
+                            <form id="automation-form">
+                                <div class="form-group">
+                                    <label for="from-email">From email</label>
+                                    <input type="email" id="from-email" placeholder="sender@company.com">
+                                </div>
+                                <div class="form-group">
+                                    <label for="bcc">BCC</label>
+                                    <input type="text" id="bcc" placeholder="admin@company.com">
+                                </div>
+                                <div class="form-group">
+                                    <label for="subject">Subject template</label>
+                                    <input type="text" id="subject" placeholder="Weekly Report - {date}">
+                                </div>
+                                <div class="form-group">
+                                    <label for="mailing-list">Mailing list</label>
+                                    <textarea id="mailing-list" rows="4" placeholder="user1@company.com&#10;user2@company.com&#10;user3@company.com"></textarea>
+                                    <small>One email per line</small>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="send-date">Send date</label>
+                                        <input type="date" id="send-date">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="send-time">Send time</label>
+                                        <input type="time" id="send-time">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="mode">Mode</label>
+                                    <select id="mode">
+                                        <option value="test">Test mode</option>
+                                        <option value="live">Live mode</option>
+                                    </select>
+                                </div>
+                            </form>
+                        </div>
+
+                        <div class="code-column">
+                            <h4>Python Code</h4>
+                            <textarea id="python-code" class="code-editor">def run_automation(mailing_list, subject, from_email, bcc, scheduled_at):
+    """
+    Execute email automation with provided configuration.
+    
+    Args:
+        mailing_list: List of recipient email addresses
+        subject: Email subject line
+        from_email: Sender email address
+        bcc: BCC recipients (comma-separated)
+        scheduled_at: ISO format datetime string
+    """
+    # TODO: Implement your email sending logic here
+    # Example workflow:
+    # 1. Connect to email service
+    # 2. Prepare email template
+    # 3. Loop through mailing_list
+    # 4. Send personalized emails
+    # 5. Log results
+    
+    for recipient in mailing_list:
+        print(f"Sending email to {recipient}")
+        # Your email sending code here
+    
+    return {
+        "status": "success",
+        "recipients_count": len(mailing_list),
+        "scheduled_at": scheduled_at
+    }</textarea>
+                        </div>
+                    </div>
+
+                    <div class="product-actions">
+                        <button id="btn-validate" class="btn btn-secondary">Validate config</button>
+                        <button id="btn-test" class="btn btn-secondary">Run test (simulate)</button>
+                        <button id="btn-schedule" class="btn btn-primary">Schedule run (simulate)</button>
+                    </div>
+
+                    <div id="status-area" class="status-area"></div>
+                    <pre id="json-preview" class="json-preview"></pre>
+                </div>
+
+                <div class="product-grid">
+                    <div class="product-placeholder">
+                        <h4>Node.js Job Runner</h4>
+                        <p>Execute scheduled Node.js tasks with custom configurations.</p>
+                        <span class="badge">Coming soon</span>
+                    </div>
+                    <div class="product-placeholder">
+                        <h4>Data Pipeline Scheduler</h4>
+                        <p>Automate data processing workflows with configurable triggers.</p>
+                        <span class="badge">Coming soon</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="blog" class="blog">
+            <div class="blog-header">
+                <h2>Blog</h2>
+                <p class="section-subheading">Latest updates and insights.</p>
+            </div>
+            <div class="blog-grid">
+                <article class="blog-card">
+                    <h3>Automating Email Campaigns at Scale</h3>
+                    <p>Learn how our internal teams reduced manual email tasks by 80% using Python automation workflows.</p>
+                    <time>Nov 10, 2025</time>
+                </article>
+                <article class="blog-card">
+                    <h3>Best Practices for Scheduled Tasks</h3>
+                    <p>Discover the key principles for building reliable, maintainable automation scripts for recurring operations.</p>
+                    <time>Nov 5, 2025</time>
+                </article>
+                <article class="blog-card">
+                    <h3>Security in Internal Automation Tools</h3>
+                    <p>Explore how we ensure data privacy and security in our automation infrastructure for internal workflows.</p>
+                    <time>Oct 28, 2025</time>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Automata. Internal use only.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
